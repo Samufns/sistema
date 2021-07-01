@@ -53,7 +53,7 @@ public class ProdutoController {
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public ResponseEntity<Produto> deletaProduto(@PathVariable Integer id, @RequestBody Produto produto) {
+	public ResponseEntity<Produto> deletaProduto(@PathVariable Integer id) {
 		Optional<Produto> optionalProduto = pr.findById(id);
 		if (optionalProduto.isPresent()) {
 			pr.deleteById(id);

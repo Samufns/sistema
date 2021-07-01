@@ -53,7 +53,7 @@ public class ClienteController {
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public ResponseEntity<Cliente> deletaCliente(@PathVariable Integer id, @RequestBody Cliente cliente ) {
+	public ResponseEntity<Cliente> deletaCliente(@PathVariable Integer id) {
 		Optional<Cliente> optionalCliente = cr.findById(id);
 		if (optionalCliente.isPresent()) {
 			cr.deleteById(id);

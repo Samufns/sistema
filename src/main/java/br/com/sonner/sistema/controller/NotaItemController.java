@@ -63,7 +63,7 @@ public class NotaItemController {
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public ResponseEntity<NotaItem> deletaNota(@PathVariable Integer id, @PathVariable NotaItem notaItem) {
+	public ResponseEntity<NotaItem> deletaNota(@PathVariable Integer id) {
 		Optional<NotaItem> optionalNotaItem = nir.findById(id);
 		if (optionalNotaItem.isPresent()) {
 			nir.deleteById(id);

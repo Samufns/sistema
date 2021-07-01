@@ -57,10 +57,10 @@ public class NotaController {
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	public ResponseEntity<Nota> deletaNota(@PathVariable Integer id ,@RequestBody Nota nota) {
+	public ResponseEntity<Nota> deletaNota(@PathVariable Integer id ) {
 		Optional<Nota> optionalNota = nr.findById(id);
 		if (optionalNota.isPresent()) {
-			cr.deleteById(id);
+			nr.deleteById(id);
 			return ResponseEntity.ok().build();
 		}
 		return ResponseEntity.notFound().build();
