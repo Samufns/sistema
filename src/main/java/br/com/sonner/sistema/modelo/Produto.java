@@ -12,29 +12,12 @@ public class Produto {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String nome;
 	private String codigo;
 	private String descricao;
 	private BigDecimal valor;
 	
-	public Produto() {
-	}
-	
-	public Produto(Produto produto) {
-		this.id = produto.getId();
-		this.nome = produto.getNome();
-		this.codigo = produto.getCodigo();
-		this.descricao = produto.getDescricao();
-		this.valor = produto.getValor();
-	}
 	
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	public Integer getId() {
 		return id;
 	}
